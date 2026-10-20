@@ -10,8 +10,10 @@ button:hover { background: #294889; } button:disabled { opacity: .6; cursor: wai
 .count { margin: 2px 0 10px; font-weight: 700; }
 .counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
 .count-card { display: grid; justify-items: center; gap: 2px; padding: 9px 4px; border: 1px solid #e7eaf0; border-radius: 8px; background: #fff; }
-.count-card .icon { font-size: 19px; font-weight: 800; line-height: 1.1; }
-.count-card.identical .icon { color: #c93b3b; } .count-card.similar .icon { color: #d2941e; } .count-card.different .icon { color: #388360; }
+.count-card .icon { width: 23px; height: 23px; }
+.count-card.identical .triangle { fill: #c93b3b; } .count-card.similar .triangle { fill: #e2a321; }
+.count-card .triangle .bang { fill: white; }
+.count-card.different .dot { fill: #388360; }
 .count-card .label { color: #606b7d; font-size: 10px; } .count-card strong { font-size: 17px; }
 .criteria { margin: 9px 0; color: #707b8c; font-size: 10px; }
 .signal { margin: 8px 0; padding: 10px 11px; border-radius: 8px; background: white; border: 1px solid #e7eaf0; }

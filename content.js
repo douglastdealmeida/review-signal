@@ -21,9 +21,10 @@
       if (!semantic && !rating) continue;
       const ratingNode = node.querySelector('[itemprop="ratingValue"], [aria-label*="star" i], [class*="rating" i]');
       const ratingText = `${ratingNode?.getAttribute("content") || ""} ${ratingNode?.getAttribute("aria-label") || ""} ${ratingNode?.textContent || ""} ${text}`;
-      const ratingMatch = ratingText.match(/\b([1-5](?:\.\d)?)\s*(?:\/\s*5|out of 5|stars?)\b/i) || ratingText.match(/\b([1-5](?:\.\d)?)\b/);
+      const ratingMatch = ratingText.match(/\b([1-5](?:\.\d)?)\s*(?:\/\s*5|out of 5|stars?)\b/i);
       const stars = (ratingNode?.getAttribute("aria-label") || "").match(/([1-5])\s*(?:out of\s*5)?\s*stars?/i);
-      const numericRating = stars ? Number(stars[1]) : ratingMatch ? Number(ratingMatch[1]) : null;
+      const bareValue = ratingNode ? (ratingNode.getAttribute("content") || ratingNode.textContent || "").trim().match(/^([1-5](?:\.\d)?)$/) : null;
+      const numericRating = stars ? Number(stars[1]) : ratingMatch ? Number(ratingMatch[1]) : bareValue ? Number(bareValue[1]) : null;
       scored.push({ node, text, rating: numericRating, score: (semantic ? 2 : 0) + (rating ? 1 : 0) + (node.matches("article, blockquote") ? 1 : 0) });
     }
     scored.sort((a, b) => b.score - a.score || a.text.length - b.text.length);
