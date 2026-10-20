@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { width: 340px; margin: 0; color: #202735; background: #f8f9fb; font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+header { display: flex; align-items: center; gap: 11px; padding: 17px 18px 14px; background: white; border-bottom: 1px solid #e7eaf0; }
+.mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; color: white; background: #3658a5; font-weight: 750; }
+h1 { margin: 0; font-size: 16px; } header p { margin: 1px 0 0; color: #677184; font-size: 12px; }
+main { padding: 15px 18px 16px; }
+button { width: 100%; border: 0; border-radius: 8px; padding: 10px; color: white; background: #3658a5; font-size: 14px; font-weight: 650; cursor: pointer; }
+button:hover { background: #294889; } button:disabled { opacity: .6; cursor: wait; }
+#status { padding: 12px 0; color: #657084; font-size: 12px; }
+.count { margin: 2px 0 10px; font-weight: 700; }
+.counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.count-card { display: grid; justify-items: center; gap: 2px; padding: 9px 4px; border: 1px solid #e7eaf0; border-radius: 8px; background: #fff; }
+.count-card .icon { font-size: 19px; font-weight: 800; line-height: 1.1; }
+.count-card.identical .icon { color: #c93b3b; } .count-card.similar .icon { color: #d2941e; } .count-card.different .icon { color: #388360; }
+.count-card .label { color: #606b7d; font-size: 10px; } .count-card strong { font-size: 17px; }
+.criteria { margin: 9px 0; color: #707b8c; font-size: 10px; }
+.signal { margin: 8px 0; padding: 10px 11px; border-radius: 8px; background: white; border: 1px solid #e7eaf0; }
+.signal.caution { border-left: 3px solid #d78b21; } .signal.clear { border-left: 3px solid #43876b; } .signal.info { border-left: 3px solid #75839a; }
+.signal strong { display: block; margin-bottom: 3px; } .signal span { color: #626d7f; font-size: 12px; }
+details { margin-top: 12px; padding: 9px 10px; background: white; border: 1px solid #e7eaf0; border-radius: 8px; }
+summary { cursor: pointer; font-size: 12px; font-weight: 650; } ol { margin: 9px 0 0; padding-left: 20px; } li { margin: 7px 0; color: #5d6778; font-size: 11px; }
+footer { margin-top: 14px; color: #778194; font-size: 10px; }
